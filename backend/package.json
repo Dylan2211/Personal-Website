@@ -1,9 +1,12 @@
 {
   "dependencies": {
     "classnames": "^2.5.1",
+    "cors": "^2.8.5",
     "dnd-kit": "^0.0.2",
     "dotenv": "^17.2.3",
+    "express": "^5.2.1",
     "howler": "^2.2.4",
+    "multer": "^2.0.2",
     "next": "^16.0.3",
     "python": "^0.0.4",
     "react": "^19.2.0",
@@ -24,8 +27,10 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
