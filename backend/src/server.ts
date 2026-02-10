@@ -1,4 +1,10 @@
-const express = require("express");
+import express from "express";
+import type { ErrorRequestHandler } from "express";
+
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  console.error("Unhandled error:", err);
+  res.status(500).json({ message: "Internal server error" });
+};
 const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
@@ -23,10 +29,6 @@ app.get("/mainpage", (req, res) => {
 
 app.use((req, res, next) => {
   res.status(404).json({ message: "Route not found" });
-});
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err.stack);
-  res.status(500).json({ message: "Internal server error" });
 });
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
