@@ -8,7 +8,8 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
-const routes = require("./routes/routes.js");
+const routes = require("./routes/routes");
+const frontendPath = path.join(__dirname, "../../frontend")
 const app = express();
 
 dotenv.config();
@@ -17,14 +18,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const ROUTES = {
+  HOME: "/",
+  MAINPAGE: "/mainpage"
+}
+
 app.use("/api", routes);
 
-app.get("/", (req, res) => {
-  res.redirect("/mainpage");
+app.get(ROUTES.HOME, (req, res) => {
+  res.redirect("mainpage/mainpage.html");
 });
 
-app.get("/mainpage", (req, res) => {
-  res.sendFile(path.join(__dirname, "mainpage.html"));
+app.get(ROUTES.MAINPAGE, (req, res) => {
+  res.sendFile(path.join(frontendPath, "mainpage/mainpage.html"));
 });
 
 app.use((req, res, next) => {
