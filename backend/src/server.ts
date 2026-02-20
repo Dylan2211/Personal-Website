@@ -18,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(frontendPath))
+
 const ROUTES = {
   HOME: "/",
   MAINPAGE: "/mainpage"
@@ -26,7 +28,7 @@ const ROUTES = {
 app.use("/api", routes);
 
 app.get(ROUTES.HOME, (req, res) => {
-  res.redirect("mainpage/mainpage.html");
+  res.redirect(ROUTES.MAINPAGE);
 });
 
 app.get(ROUTES.MAINPAGE, (req, res) => {
