@@ -1,6 +1,6 @@
 h1 {
     color: #ffffff;
-    font-size: 10-px;
+    font-size: 80px;
 }
 
 html, body {
@@ -13,6 +13,7 @@ html, body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 }
 
 .container {
@@ -23,4 +24,19 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 0;
+}
+
+.draggable {
+  width: 25%;
+  min-height: 6.5em;
+  margin: 1rem 0 0 1rem;
+  background-color: #29e;
+  color: white;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
+  z-index: 1; 
+  position: absolute;
 }

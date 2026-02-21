@@ -1,14 +1,20 @@
+const position = {x:0, y:0}
 
-function dragstartHandler(ev){
-    ev.dataTransfer.setData("test", ev.target.id);
-}
+interact('.draggable').draggable({
+    listeners: {
+        start (event) {},
+        move (event) {
+            position.x += event.dx
+            position.y += event.dy
 
-function dragoverHandler(ev) {
-    ev.preventDefault();
-}
+            event.target.style.transform = 
+                `translate(${position.x}px, ${position.y}px)`
+        },
+    }
+})
 
-function dropHandler(ev) {
-    ev.preventDefault();
-    const data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+let biggest_z_index = 0;
+function highestZIndex() {
+    biggest_z_index += 1;
+    return biggest_z_index;
 }
