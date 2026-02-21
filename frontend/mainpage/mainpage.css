@@ -40,3 +40,9 @@ html, body {
   z-index: 1; 
   position: absolute;
 }
+
+/* TODO */
+#faq {
+color: #ff0000;
+background-color: #fff000;}
+#about {width: default;}
