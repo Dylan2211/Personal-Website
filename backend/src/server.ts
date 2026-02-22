@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
 const routes = require("./routes/routes");
-const frontendPath = path.join(__dirname, "../../frontend")
+const frontendPath = path.join(__dirname, "../../frontend");
 const app = express();
 
 dotenv.config();
@@ -18,12 +18,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(frontendPath))
+app.use(express.static(frontendPath));
 
 const ROUTES = {
   HOME: "/",
-  MAINPAGE: "/mainpage"
-}
+  MAINPAGE: "/mainpage",
+};
 
 app.use("/api", routes);
 

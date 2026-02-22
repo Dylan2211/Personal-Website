@@ -1,48 +1,84 @@
 h1 {
-    color: #ffffff;
-    font-size: 80px;
+  color: #ffffff;
+  font-size: 80px;
 }
 
-html, body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(133, 133, 133);
-    flex-flow:column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
+html,
+main {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  flex-flow: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: "Poppins";
+  font-size: 22px;
 }
 
 .container {
-    width: 500px;
-    height: 500px;
-    background-color: #414141;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 0;
+  min-width: 700px;
+  width: 50vw;
+  min-height: 500px;
+  height: 70vh;
+  background-color: #c2c2c2;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+  padding: 20px;
 }
 
-.draggable {
+.page-layer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page {
   width: 25%;
   min-height: 6.5em;
   margin: 1rem 0 0 1rem;
   background-color: #29e;
   color: white;
-  border-radius: 0.75em;
   padding: 4%;
   touch-action: none;
   user-select: none;
-  z-index: 1; 
+  z-index: 1;
   position: absolute;
+  overflow: hidden;
+  visibility: hidden;
 }
 
-/* TODO */
+.topbar {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  background-color: #414141;
+  justify-content: space-between;
+  flex-direction: row;
+  color: white;
+}
+
 #faq {
-color: #ff0000;
-background-color: #fff000;}
-#about {width: default;}
+  width: 900px;
+  height: 600px;
+  color: #ff0000;
+  background-color: #fff000;
+}
+
+.bold {
+  font-weight: 100px;
+}
+
+#about {
+  width: auto;
+}

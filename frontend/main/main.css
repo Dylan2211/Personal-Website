@@ -7,3 +7,12 @@ Green?
 Dark Blue?
 0F2E82
 */
+button,
+input,
+textarea,
+.page {
+  border-radius: 12px;
+}
+.container {
+  border-radius: 12px;
+}
