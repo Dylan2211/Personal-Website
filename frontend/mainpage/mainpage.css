@@ -1,6 +1,7 @@
 h1 {
-  color: #ffffff;
+  color: #252525;
   font-size: 80px;
+  font-weight: 200;
 }
 
 html,
@@ -19,14 +20,38 @@ main {
   font-size: 22px;
 }
 
+/* Mainpage CSS */
 .container {
-  min-width: 700px;
+  min-width: 400px;
   width: 50vw;
-  min-height: 500px;
+  min-height: 640px;
   height: 70vh;
   overflow: hidden;
 }
 
+#bold-header {
+  font-weight: 1000;
+  color: #77e9f4;
+}
+
+.button-container {
+  width: 60%;
+  height: 20%;
+  background-color: red;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.btn {
+  min-height: 30px;
+  min-width: 25px;
+  width: 20%;
+  color: green;
+}
+.btn:hover {
+  color: pink;
+}
+/* Page CSS */
 .page-layer {
   position: absolute;
   width: 100vw;
@@ -49,10 +74,22 @@ main {
   visibility: hidden;
 }
 
+#faq {
+  width: 900px;
+  height: 600px;
+  color: #ff0000;
+  background-color: #fff000;
+}
+
+#about {
+  width: auto;
+}
+
+/* Shared elements */
 .topbar {
   top: 0;
   left: 0;
-  height: 50px;
+  height: 60px;
   width: 100%;
   background-color: #414141;
   justify-content: space-between;
@@ -60,11 +97,12 @@ main {
   color: white;
   align-content: center;
   padding: 0%;
+  position: relative;
+  padding-inline: 25px;
 }
 
 .topbar-header {
-  color: red;
-  left: 20px;
+  color: white;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -76,8 +114,8 @@ main {
 
 .content {
   width: 100%;
-  height: calc(100% - 50px);
-  background-color: #e7e7e7;
+  height: calc(100% - 60px);
+  background-color: white;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -87,19 +125,4 @@ main {
   border: 2px solid gray;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
-}
-
-#faq {
-  width: 900px;
-  height: 600px;
-  color: #ff0000;
-  background-color: #fff000;
-}
-
-.bold-header {
-  font-weight: 200px;
-}
-
-#about {
-  width: auto;
 }
