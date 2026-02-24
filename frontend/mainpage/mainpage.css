@@ -24,21 +24,14 @@ main {
   width: 50vw;
   min-height: 500px;
   height: 70vh;
-  background-color: #c2c2c2;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 0;
-  position: absolute;
   overflow: hidden;
-  padding: 20px;
 }
 
 .page-layer {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
 }
 
 .page {
@@ -51,7 +44,7 @@ main {
   touch-action: none;
   user-select: none;
   z-index: 1;
-  position: absolute;
+  /* position: absolute; */
   overflow: hidden;
   visibility: hidden;
 }
@@ -59,13 +52,41 @@ main {
 .topbar {
   top: 0;
   left: 0;
-  position: absolute;
   height: 50px;
   width: 100%;
   background-color: #414141;
   justify-content: space-between;
   flex-direction: row;
   color: white;
+  align-content: center;
+  padding: 0%;
+}
+
+.topbar-header {
+  color: red;
+  left: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topbar-close {
+  right: 20px;
+  color: green;
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: #e7e7e7;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid gray;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 #faq {
@@ -75,8 +96,8 @@ main {
   background-color: #fff000;
 }
 
-.bold {
-  font-weight: 100px;
+.bold-header {
+  font-weight: 200px;
 }
 
 #about {
