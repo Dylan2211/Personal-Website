@@ -1,10 +1,14 @@
 h1 {
   color: #252525;
-  font-size: 80px;
+  /* font-size: 80px; */
+  /* Font-size needs to be bigger */
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 200;
 }
 
-html,
+html {
+  font-size: 100%;
+}
 main {
   margin: 0;
   height: 100vh;
@@ -17,7 +21,7 @@ main {
   overflow: hidden;
   position: relative;
   font-family: "Poppins";
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 /* Mainpage CSS */
@@ -30,23 +34,45 @@ main {
 }
 
 #bold-header {
-  font-weight: 1000;
+  font-weight: 900;
   color: #77e9f4;
 }
 
 .button-container {
-  width: 60%;
+  width: 70%;
   height: 20%;
   background-color: red;
-  flex-flow: row;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  display: flex;
 }
 
-.btn {
+.individual-button-container {
   min-height: 30px;
   min-width: 25px;
-  width: 20%;
+  flex: 1;
   color: green;
+}
+.faq-icon {
+  width: 2rem;
+  height: 2 rem;
+  object-fit: cover;
+  /* border-radius: 0.4rem; */
+}
+.btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  appearance: none; /* removes native OS styling */
+  border: none; /* remove default border */
+  background: none; /* remove default background */
+  padding: 0.6em 0.9em; /* remove default padding */
+  cursor: pointer;
+  font-family: "Poppins";
+  font: inherit; /* inherit typography */
+  color: inherit; /* inherit text color */
 }
 .btn:hover {
   color: pink;
