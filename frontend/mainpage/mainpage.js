@@ -28,3 +28,23 @@ function highestZIndex() {
   biggest_z_index += 1;
   return biggest_z_index;
 }
+
+document.addEventListener("click", (e) => {
+  const closeBtn = e.target.closest(".topbar-close");
+  if (closeBtn) {
+    closeBtn.closest(".page").classList.remove("open");
+    return;
+  }
+  const btn = e.target.closest(".btn[data-target]");
+  if (!btn) return;
+
+  const pageId = btn.dataset.target;
+  const page = document.getElementById(pageId);
+  if (!page) return;
+
+  page.classList.toggle("open");
+});
+
+function openAbout() {
+  const aboutPage = document.getElementById("about-page");
+}

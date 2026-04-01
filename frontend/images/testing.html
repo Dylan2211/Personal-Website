@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Button Container Demo</title>
+
+    <style>
+      /* =========================
+   1. BASE RESET
+========================= */
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+      }
+
+      /* =========================
+   2. LAYOUT CONTAINER
+   (Controlled Expansion)
+========================= */
+      main {
+        padding: 4rem 1rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px; /* stops infinite stretch */
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      /* =========================
+   3. TYPOGRAPHY
+========================= */
+      h1 {
+        margin: 0;
+        font-weight: 300;
+        font-size: clamp(2rem, 4vw, 3rem);
+        text-align: center;
+      }
+
+      /* =========================
+   4. BUTTON CONTAINER
+   (Layout Responsibility)
+========================= */
+      .button-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* wraps on smaller screens */
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      /* =========================
+   5. BUTTON COMPONENT
+   (Content Responsibility)
+========================= */
+      .btn {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+
+        padding: 1rem;
+        width: 180px; /* fixed component width */
+        text-align: center;
+
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+
+        cursor: pointer;
+      }
+
+      /* Auto-cropped image */
+      .btn img {
+        width: 100%;
+        height: 120px; /* fixed visual height */
+        object-fit: cover; /* auto crop */
+        border-radius: 8px;
+      }
+
+      /* Text */
+      .btn span {
+        font-size: 1rem;
+      }
+
+      /* =========================
+   6. RESPONSIVE BREAKPOINT
+========================= */
+      @media (min-width: 1400px) {
+        .btn {
+          width: 200px; /* slightly larger on wide desktop */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <h1>Responsive Button Container</h1>
+
+        <div class="button-container">
+          <button class="btn">
+            <img src="image1.jpg" alt="" />
+            <span>Image 1</span>
+          </button>
+
+          <button class="btn">
+            <img src="image2.jpg" alt="" />
+            <span>Image 2</span>
+          </button>
+
+          <button class="btn">
+            <img src="image3.jpg" alt="" />
+            <span>Image 3</span>
+          </button>
+
+          <button class="btn">
+            <img src="image4.jpg" alt="" />
+            <span>Image 4</span>
+          </button>
+
+          <button class="btn">
+            <img src="image5.jpg" alt="" />
+            <span>Image 5</span>
+          </button>
+
+          <button class="btn">
+            <img src="image6.jpg" alt="" />
+            <span>Image 6</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

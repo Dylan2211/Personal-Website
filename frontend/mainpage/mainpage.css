@@ -5,16 +5,22 @@ h1 {
   color: #252525;
   /* font-size: 80px; */
   /* Font-size needs to be bigger */
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(4rem, 5vw + 2rem, 5rem);
   font-weight: 200;
+}
+
+h2 {
+  color: #3152e2;
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+  font-weight: 400;
 }
 
 html {
   font-size: 100%;
 }
 main {
-  height: 100vh;
-  /* width: 100vw; */
+  height: 100dvh;
+  /* width: 100dvw; */
   background-color: rgb(255, 255, 255);
   flex-direction: column;
   display: flex;
@@ -32,11 +38,10 @@ body {
 
 /* Mainpage CSS */
 .container {
-  min-width: 400px;
-  max-width: 700px;
-  width: 50vw;
-  min-height: 640px;
-  height: 70vh;
+  width: clamp(600px, 60dvw + 1rem, 800px);
+  min-height: 33.75rem;
+  height: 60dvh;
+  height: clamp(25rem, 65dvh + 1rem, 40 rem);
   overflow: hidden;
 }
 
@@ -46,93 +51,114 @@ body {
 }
 
 .button-container {
-  gap: 0.75rem;
-  height: auto;
-  background-color: red;
+  width: 70%;
+  height: clamp(80px, 8dvw, 140px);
+  /* border: 5px solid blue; */
+  gap: 0.5rem;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-.individual-button-container {
-  min-height: 30px;
-  min-width: 25px;
-  flex: 1;
-  color: green;
-}
-.faq-icon {
-  width: 2rem;
-  height: 2rem;
-  object-fit: cover;
-  /* border-radius: 0.4rem; */
-}
 .btn {
+  width: clamp(16%, 20%, 30%);
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5em;
   justify-content: center;
-  padding: 0.75em 1em; /* remove default padding */
-  border: none; /* remove default border */
+  /* box-sizing: border-box;
+  border: 5px solid black; remove default border */
+  background-color: transparent;
+  border: none;
   font: inherit; /* inherit typography */
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
-  appearance: none; /* removes native OS styling */
-  background: none; /* remove default background */
-  cursor: pointer;
   font-family: "Poppins";
-  color: inherit; /* inherit text color */
+  /* background-color: red; */
+  appearance: none; /* removes native OS styling */
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
 .btn:hover {
   color: pink;
+  transform: scale(1.08);
 }
+
+.btn span {
+  font-size: clamp(0.5rem, 1.2dvh + 0.3rem, 2.5rem);
+  color: lightblue; /* inherit text color */
+}
+
+.btn .icon {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 /* Page CSS */
 .page-layer {
+  pointer-events: none;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: 2;
 }
 
 .page {
-  width: 25%;
-  min-height: 6.5em;
-  margin: 1rem 0 0 1rem;
-  background-color: #29e;
-  color: white;
-  padding: 4%;
+  position: absolute;
+  pointer-events: auto;
+  z-index: 2;
+  width: clamp(500px, 50dvw + 1rem, 700px);
+  height: clamp(340px, 55dvh + 1rem, 70dvh);
+  background-color: white;
+  color: black;
   touch-action: none;
   user-select: none;
-  z-index: 1;
-  /* position: absolute; */
+  z-index: 0;
   overflow: hidden;
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#faq {
-  width: 900px;
-  height: 600px;
-  color: #ff0000;
-  background-color: #fff000;
+.page.open {
+  visibility: visible;
 }
 
-#about {
-  width: auto;
+.page-content {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  border: 2px solid gray;
+  box-sizing: border-box;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 /* Shared elements */
 .topbar {
   top: 0;
   left: 0;
-  height: 60px;
+  height: clamp(3.5rem, 6vh + 1rem, 4rem);
   width: 100%;
   background-color: #414141;
   justify-content: space-between;
   flex-direction: row;
   color: white;
   align-content: center;
-  padding: 0%;
-  position: relative;
+  align-items: center;
   padding-inline: 25px;
+  display: flex;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .topbar-header {
@@ -142,13 +168,12 @@ body {
 }
 
 .topbar-close {
-  right: 20px;
-  color: green;
+  color: white;
 }
 
 .content {
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100% - 64px);
   background-color: white;
   align-items: center;
   display: flex;
@@ -159,4 +184,36 @@ body {
   border: 2px solid gray;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
+}
+
+/* Never gonna touch this section */
+#about-container-uwu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-inline: 2rem;
+  padding-block-start: 2rem;
+  padding-block-end: 1rem;
+  box-sizing: border-box;
+}
+#pfp {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+#about-text-container-owo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 2rem;
+}
+#about-text-container-owo h2 {
+  margin: 0;
+}
+#about-text-container-owo p {
+  margin: 0;
+  color: #555;
 }
